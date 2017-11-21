@@ -1,0 +1,18 @@
+<Panel ux:Class="LoginPanel">
+    <StackPanel>
+        <Grid ux:Name="loginArea" Row="0" Padding="0,20" RowCount="2" Columns="auto,1*" Height="140" MaxWidth="400" Margin="20,0,20,0">
+            <Text Font="FontAwesome" FontSize="40" Margin="5, 15, 0, 15" Value="&#xf007;" TextColor="#403D39" TextWrapping="Wrap" TextAlignment="Left" />
+            <TextInput Value="{brukernavn}" Row="0" Column="1" PlaceholderText="Username" PlaceholderColor="#999" TextColor="#000" CaretColor="#fff" />
+            <Rectangle Row="0" Column="0" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#fff" />
+
+            <Text Font="FontAwesome" FontSize="40" Margin="5, 15, 0, 15" Value="&#xf023;" TextColor="#403D39" TextWrapping="Wrap" TextAlignment="Left" />
+            <TextInput Value="{passord}" Row="1" Column="1" PlaceholderText="Password" PlaceholderColor="#999" TextColor="#000" CaretColor="#fff" IsPassword="true" />
+            <Rectangle Row="1" Column="0" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#fff" />
+        </Grid>
+
+        <Grid ColumnCount="2" Row="1" Margin="15,0,15,0">
+            <login.Button Height="40" Text="Login" Clicked="{login}" />
+            <login.Button Height="40" Text="Register" />
+        </Grid>
+    </StackPanel>
+</Panel>

@@ -2,5 +2,7 @@
 
   <Router ux:Dependency="router"/>
   <JavaScript File="LoginPage.js" />
-  
+
+  <LoginPanel />
+
 </Page>

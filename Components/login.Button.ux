@@ -1,0 +1,12 @@
+<Panel ux:Class="login.Button" Margin="5">
+    <string ux:Property="Text" />
+
+    <Rectangle Layer="Background" Color="#efefef">
+    </Rectangle>
+    
+    <Text Alignment="Center" Color="Black" Value="{ReadProperty Text}" FontSize="17" TextAlignment="Center" />
+
+    <WhilePressed>
+        <Scale Factor=".95" Duration=".08" Easing="QuadraticOut" />
+    </WhilePressed>
+</Panel>

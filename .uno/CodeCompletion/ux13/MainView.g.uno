@@ -1,6 +1,50 @@
 [Uno.Compiler.UxGenerated]
 public partial class MainView: Fuse.App
 {
+    [Uno.Compiler.UxGenerated]
+    public partial class Template: Uno.UX.Template
+    {
+        [Uno.WeakReference] internal readonly MainView __parent;
+        [Uno.WeakReference] internal readonly MainView __parentInstance;
+        public Template(MainView parent, MainView parentInstance): base("login", false)
+        {
+            __parent = parent;
+            __parentInstance = parentInstance;
+        }
+        static Template()
+        {
+        }
+        public override object New()
+        {
+            var __self = new global::LoginPage(__parent.router);
+            __self.Name = __selector0;
+            return __self;
+        }
+        static global::Uno.UX.Selector __selector0 = "login";
+    }
+    [Uno.Compiler.UxGenerated]
+    public partial class Template1: Uno.UX.Template
+    {
+        [Uno.WeakReference] internal readonly MainView __parent;
+        [Uno.WeakReference] internal readonly MainView __parentInstance;
+        public Template1(MainView parent, MainView parentInstance): base("home", false)
+        {
+            __parent = parent;
+            __parentInstance = parentInstance;
+        }
+        static Template1()
+        {
+        }
+        public override object New()
+        {
+            var __self = new global::HomePage(__parent.router);
+            __self.Name = __selector0;
+            return __self;
+        }
+        static global::Uno.UX.Selector __selector0 = "home";
+    }
+    internal global::Fuse.Navigation.Router router;
+    [global::Uno.UX.UXGlobalResource("FontAwesome")] public static readonly Fuse.Font FontAwesome;
     static MainView()
     {
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.Animations.Easing.Linear, "Linear");
@@ -110,6 +154,9 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.ParentSize, "ParentSize");
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.Width, "Width");
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.Height, "Height");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.FontAwesome, "FontAwesome");
+        FontAwesome = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../Assets/Fonts/fontawesome.otf")));
+        global::Uno.UX.Resource.SetGlobalKey(FontAwesome, "FontAwesome");
     }
     [global::Uno.UX.UXConstructor]
     public MainView()
@@ -135,5 +182,18 @@ public partial class MainView: Fuse.App
         var temp14 = new global::FuseJS.Bundle();
         var temp15 = new global::FuseJS.FileReaderImpl();
         var temp16 = new global::FuseJS.UserEvents();
+        router = new global::Fuse.Navigation.Router();
+        var temp17 = new global::Fuse.Controls.ClientPanel();
+        var temp18 = new global::Fuse.Controls.Navigator();
+        var login = new Template(this, this);
+        var home = new Template1(this, this);
+        router.Name = __selector0;
+        temp17.Children.Add(temp18);
+        temp18.DefaultPath = "login";
+        temp18.Templates.Add(login);
+        temp18.Templates.Add(home);
+        this.Children.Add(router);
+        this.Children.Add(temp17);
     }
+    static global::Uno.UX.Selector __selector0 = "router";
 }

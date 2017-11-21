@@ -1,6 +1,7 @@
 <App>
 
     <Router ux:Name="router" />
+    <Font File="Assets/Fonts/fontawesome.otf" ux:Global="FontAwesome" />
 
     <ClientPanel>
         <Navigator DefaultPath="login">
